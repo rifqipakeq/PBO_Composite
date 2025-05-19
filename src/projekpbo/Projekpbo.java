@@ -276,8 +276,74 @@ public class Projekpbo {
             System.out.println("Maaf, tidak bisa membuat bangun ruang Prisma Trapesium dengan nilai yang diberikan.");
         }
         
-                
+        // Lingkaran --> Bola, Kerucut, Tabung
+        try {
+            System.out.println("\n->Bola \n jari-jari = 7");
+            Bola bola = new Bola(7);
+            System.out.println("Volume Bola: " + bola.getVolume()); 
+            System.out.println("Luas Permukaan Bola: " + bola.getLuasPermukaan());
+        } catch (Exception e) {
+            System.out.println("Maaf, tidak bisa membuat bangun ruang Bola dengan nilai yang diberikan.");
+        }  
         
+        try {
+            System.out.println("\n->Tabung \n jari-jari = 7 & tinggi = 5");
+            Tabung tabung = new Tabung(7,5);
+            System.out.println("Volume Tabung: " + tabung.getVolume()); 
+            System.out.println("Luas Permukaan Tabung: " + tabung.getLuasPermukaan());
+        } catch (Exception e) {
+            System.out.println("Maaf, tidak bisa membuat bangun ruang Tabung dengan nilai yang diberikan.");
+        }        
+        
+        try {
+            System.out.println("\n->Kerucut \n jari-jari = 7 & tinggi = 5");
+            Kerucut kerucut = new Kerucut(7,5);
+            System.out.println("Volume Kerucut: " + kerucut.getVolume()); 
+            System.out.println("Luas Permukaan Kerucut: " + kerucut.getLuasPermukaan());
+        } catch (Exception e) {
+            System.out.println("Maaf, tidak bisa membuat bangun ruang Kerucut dengan nilai yang diberikan.");
+        } 
+        
+        try {
+            System.out.println("\n->Kerucut Terpancung \n jari-jari atas = 3 & jari-jari bawah = 5 & tinggi terpancung = 4");
+            KerucutTerpancung kerucutTerpancung = new KerucutTerpancung(3,5,4);
+            System.out.println("Volume KerucutTerpancung: " + kerucutTerpancung.getVolume()); 
+            System.out.println("Luas Permukaan KerucutTerpancung: " + kerucutTerpancung.getLuasPermukaan());
+        } catch (Exception e) {
+            System.out.println("Maaf, tidak bisa membuat bangun ruang KerucutTerpancung dengan nilai yang diberikan.");
+        } 
+                
+        try {
+            System.out.println("\n->Juring Bola\n jari-jari = 7 & sudut  = 90 derajat");
+            Bola bola = new Bola(7);
+            JuringBola juringBola = new JuringBola(bola,90);
+            System.out.println("Volume Juring Bola: " + juringBola.getVolume()); 
+            System.out.println("Luas Permukaan Juring Bola: " + juringBola.getLuasPermukaan());
+        } catch (Exception e) {
+            System.out.println("Maaf, tidak bisa membuat bangun ruang Juring Bola dengan nilai yang diberikan.");
+        }
+        
+        try {
+            System.out.println("\n->Cincin Bola\n jari-jari = 7 & tinggi cincin = 3");
+            Bola bola = new Bola(7);
+            CincinBola cincinBola = new CincinBola(bola,3);
+            System.out.println("Volume Cincin Bola: " + cincinBola.getVolume()); 
+            System.out.println("Luas Permukaan Cincin Bola: " + cincinBola.getLuasPermukaan());
+        } catch (Exception e) {
+            System.out.println("Maaf, tidak bisa membuat bangun ruang Cincin Bola dengan nilai yang diberikan.");
+        }   
+    
+        try {
+            System.out.println("\n->Tembereng Bola\n jari-jari = 7 & tinggi tembereng = 5");
+            Bola bola = new Bola(7);
+            TemberengBola temberengBola = new TemberengBola(bola,5);
+            System.out.println("Volume Tembereng Bola: " + temberengBola.getVolume()); 
+            System.out.println("Luas Permukaan Tembereng Bola: " + temberengBola.getLuasPermukaan());
+        } catch (Exception e) {
+            System.out.println("Maaf, tidak bisa membuat bangun ruang Tembereng Bola dengan nilai yang diberikan.");
+        }  
+               
+               
         
     }
     

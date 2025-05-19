@@ -4,7 +4,7 @@ public class Lingkaran extends BangunDatar {
     private double jariJari;
     private double luas;
     private double keliling;
-    protected final double PI = 3.14;
+    public final double PI = 3.14;
 
     public Lingkaran(double jariJari) {
         this.jariJari = jariJari;

@@ -1,28 +1,31 @@
 package projekpbo.BangunRuang;
 
-import projekpbo.BangunDatar.Lingkaran;
-
-public class Bola extends BangunRuang {
-    private Lingkaran lingkaran;
+public class CincinBola extends BangunRuang {
+    private Bola bola;
+    private double tinggiCincin;
     private double volume;
     private double luasPermukaan;
 
-    public Bola(double jariJari) {
-        this.lingkaran = new Lingkaran(jariJari);
+    public CincinBola(Bola bola, double tinggiCincin) {
+        this.bola = bola;
+        this.tinggiCincin = tinggiCincin;
         this.volume = hitungVolume();
         this.luasPermukaan = hitungLuasPermukaan();
     }
 
     @Override
     public double hitungVolume() {
-        double r = lingkaran.getJariJari();
-        volume = (4.0 / 3.0) * lingkaran.PI * r * r * r;
+        double h = tinggiCincin;
+        double r = bola.getJariJari();
+        volume = Math.PI * h * h * (r - h / 3.0);
         return volume;
     }
 
     @Override
     public double hitungLuasPermukaan() {
-        luasPermukaan = 4 * lingkaran.getLuasLingkaran();
+        double h = tinggiCincin;
+        double r = bola.getJariJari();
+        luasPermukaan = 2 * Math.PI * r * h;
         return luasPermukaan;
     }
 
@@ -32,9 +35,5 @@ public class Bola extends BangunRuang {
 
     public double getLuasPermukaan() {
         return luasPermukaan;
-    }
-
-    public double getJariJari() {
-        return lingkaran.getJariJari();
     }
 }
