@@ -1,11 +1,9 @@
 package projekpbo;
 
-import java.io.*;
-import java.util.*;
-
-/**
- * 
- */
 public interface BangunGeometri {
+    double hitungLuas();
+    double hitungKeliling();
 
+    double hitungVolume();
+    double hitungLuasPermukaan();
 }

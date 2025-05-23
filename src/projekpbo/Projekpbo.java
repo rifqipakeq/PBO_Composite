@@ -1,6 +1,6 @@
 package projekpbo;
 
-import java.util.InputMismatchException; // Import untuk menangani kesalahan input
+import java.util.InputMismatchException; 
 import java.util.Scanner;
 import projekpbo.BangunDatar.*; // Pastikan kelas Persegi ada di sini
 // import projekpbo.BangunRuang.*; // Uncomment jika sudah ada kelas bangun ruang
@@ -9,7 +9,6 @@ public class Projekpbo {
 
 
     public static void main(String[] args) {
-        // Menggunakan try-with-resources agar Scanner otomatis ditutup
         try (Scanner input = new Scanner(System.in)) {
             int pilihan;
             do {
@@ -182,8 +181,106 @@ public class Projekpbo {
                             break;
                         case 3:
                             System.out.println("=== Hitung Keseluruhan ===");
-                            System.out.println("Fitur hitung keseluruhan belum diimplementasikan.");
-                            // Implementasi keseluruhan
+                            System.out.println("\n=== Bagun Datar ===");
+                            
+                            try{
+                                JajarGenjang jajarGenjang = new JajarGenjang(10,7,5,6);
+                                System.out.println("\n-> Jajar Genjang \nalas = 10 & tinggi = 7 & sisi A = 5 & sisi B = 6");
+                                System.out.println("Luas Jajar Genjang : " + jajarGenjang.hitungLuas()); 
+                                System.out.println("Keliling Jajar Genjang : " + jajarGenjang.hitungKeliling());
+                            } catch(Exception e){
+                                System.out.println("Jajar Genjang tidak bisa dibuat dengan nilai alas dan tinggi bernilai 0 dan negatif!");
+                            }
+                            
+                            // Belah Ketupat
+                            try{
+                                BelahKetupat belahKetupat = new BelahKetupat(3,4,5);
+                                System.out.println("\n-> Belah Ketupat \nsisi = 3 & diagonal= 4.2");
+                                System.out.println("Luas Belah Ketupat : " + belahKetupat.hitungLuas()); 
+                                System.out.println("Keliling Belah Ketupat : " + belahKetupat.hitungKeliling());
+                            } catch(Exception e){
+                                System.out.println("Belah Ketupat tidak bisa dibuat dengan nilai diagonal dan sisi yang kurang dari 0 dan negatif! ");
+                            }
+                            
+                            // Layang-Layang
+                            try{
+                                LayangLayang layangLayang = new LayangLayang(20,10,12,22);
+                                System.out.println("\n-> Layang-layang\ndiagonal1 = 20 & diagonal2 = 10 & sisi pendek = 12 & sisi pendek 22");
+                                System.out.println("Luas Layang-layang : " + layangLayang.hitungLuas()); 
+                                System.out.println("Keliling Layang-layang : " + layangLayang.hitungKeliling());
+                            } catch(Exception e){
+                                System.out.println("Layang-layang tidak bisa dibuat dengan nilai diagonal dan sisi yang kurang dari 0 dan negatif!");
+                            }
+                            
+                            // Persegi
+                            try{
+                                Persegi persegi = new Persegi(10);
+                                System.out.println("\n-> Persegi\nsisi = 22");
+                                System.out.println("Luas Persegi : " + persegi.hitungLuas()); 
+                                System.out.println("Keliling Persegi: " + persegi.hitungKeliling());
+                            } catch(Exception e){
+                                System.out.println("Persegi tidak bisa dibuat dengan nilai sisi yang kurang dari 0 dan negatif!");
+                            }
+                            
+                            // Persegi Panjang
+                            try{
+                                PersegiPanjang persegiPanjang = new PersegiPanjang(12,10);
+                                System.out.println("\n-> Persegi Panjang \npanjang= 12 & lebar = 10");
+                                System.out.println("Luas Persegi Panjang : " + persegiPanjang.hitungLuas()); 
+                                System.out.println("Keliling Persegi Panjang: " + persegiPanjang.hitungKeliling());
+                            } catch(Exception e){
+                                System.out.println("Persegi Panjang tidak bisa dibuat dengan nilai panjang dan lebar yang kurang dari 0 dan negatif!");
+                            }
+                            
+                            // Segitiga
+                            try{
+                                Segitiga segitiga = new Segitiga(12,10);
+                                System.out.println("\n-> Segitiga \n alas= 12 & tinggi= 10");
+                                System.out.println("Luas Segitiga : " + segitiga.hitungLuas()); 
+                                System.out.println("Keliling Segitiga: " + segitiga.hitungKeliling());
+                            } catch(Exception e){
+                                System.out.println("Segitiga tidak bisa dibuat dengan nilai alas dan tinggi yang kurang dari 0 dan negatif!");
+                            }
+                            
+                            // Trapesium
+                            try{
+                                Trapesium trapesium = new Trapesium(10,14,8,6);
+                                System.out.println("\n-> Trapesium \n alas atas = 10 & alas bawah = 14 & sisi miring = 8 & tinggi = 6");
+                                System.out.println("Luas Trapesium : " + trapesium.hitungLuas()); 
+                                System.out.println("Keliling Trapesium : " + trapesium.hitungKeliling());
+                            } catch(Exception e){
+                                System.out.println("Trapesium tidak bisa dibuat dengan nilai alas atas, alas bawah, sisi miring dan  tinggi yang kurang dari 0 dan negatif!");
+                            }
+                            
+                            // Lingkaran
+                            try{
+                                Lingkaran lingkaran = new Lingkaran(7);
+                                System.out.println("\n-> Lingkaran \n jari-jari = 14");
+                                System.out.println("Luas Lingkaran : " + lingkaran.hitungLuas()); 
+                                System.out.println("Keliling Lingkaran : " + lingkaran.hitungKeliling());
+                            } catch(Exception e){
+                                System.out.println("Lingkaran tidak bisa dibuat dengan nilai jari- jari yang kurang dari 0 dan negatif!");
+                            }
+                            
+                            // Juring Lingkaran
+                            try{
+                                JuringLingkaran juring = new JuringLingkaran(7, 90);
+                                System.out.println("\n-> JuringLingkaran\n jari-jari = 7 & sudut 90 derajat");
+                                System.out.println("Luas JuringLingkaran: " + juring.hitungLuas()); 
+                                System.out.println("Keliling JuringLingkaran: " + juring.hitungKeliling());
+                            } catch(Exception e){
+                                System.out.println("Juring Lingkaran tidak bisa dibuat dengan nilai jari- jari  yang kurang dari 0 dan negatif!");
+                            }
+                            
+                            // Tembereng Lingkaran
+                            try{
+                                TemberengLingkaran tembereng = new TemberengLingkaran(7, 90);
+                                System.out.println("\n->Tembereng Lingkaran\n jari-jari = 7 & sudut 90 derajat");
+                                System.out.println("Luas Tembereng Lingkaran: " + tembereng.hitungLuas()); 
+                                System.out.println("Keliling Tembereng Lingkaran: " + tembereng.hitungKeliling());
+                            } catch(Exception e){
+                                System.out.println("Tembereng Lingkaran tidak bisa dibuat dengan nilai jari- jari  yang kurang dari 0 dan negatif!");
+                            }
                             break;
                         case 4:
                             System.out.println("Keluar dari program. Terima kasih!");
