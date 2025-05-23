@@ -1,350 +1,204 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package projekpbo;
 
-import projekpbo.BangunDatar.*;
-import projekpbo.BangunRuang.*;
+import java.util.InputMismatchException; // Import untuk menangani kesalahan input
+import java.util.Scanner;
+import projekpbo.BangunDatar.*; // Pastikan kelas Persegi ada di sini
+// import projekpbo.BangunRuang.*; // Uncomment jika sudah ada kelas bangun ruang
 
 public class Projekpbo {
 
+
     public static void main(String[] args) {
-        
-         // ======= Bangun Datar =======
-        System.out.println("\n=== Bagun Datar ===");
-        
-        // Jajar Genjang
-        try{
-            JajarGenjang jajarGenjang = new JajarGenjang(10,7,5,6);
-            System.out.println("\n-> Jajar Genjang \nalas = 10 & tinggi = 7 & sisi A = 5 & sisi B = 6");
-            System.out.println("Luas Jajar Genjang : " + jajarGenjang.getLuasJajarGenjang()); 
-            System.out.println("Keliling Jajar Genjang : " + jajarGenjang.getKelilingJajarGenjang());
-        } catch(Exception e){
-            System.out.println("Jajar Genjang tidak bisa dibuat dengan nilai alas dan tinggi bernilai 0 dan negatif!");
-        }
-        
-        // Belah Ketupat
-        try{
-            BelahKetupat belahKetupat = new BelahKetupat(3,4,5);
-            System.out.println("\n-> Belah Ketupat \nsisi = 3 & diagonal= 4.2");
-            System.out.println("Luas Belah Ketupat : " + belahKetupat.getLuasJajarGenjang()); 
-            System.out.println("Keliling Belah Ketupat : " + belahKetupat.getKelilingJajarGenjang());
-        } catch(Exception e){
-            System.out.println("Belah Ketupat tidak bisa dibuat dengan nilai diagonal dan sisi yang kurang dari 0 dan negatif! ");
-        }
-        
-        // Layang-Layang
-        try{
-            LayangLayang layangLayang = new LayangLayang(20,10,12,22);
-            System.out.println("\n-> Layang-layang\ndiagonal1 = 20 & diagonal2 = 10 & sisi pendek = 12 & sisi pendek 22");
-            System.out.println("Luas Layang-layang : " + layangLayang.getLuasLayangLayang()); 
-            System.out.println("Keliling Layang-layang : " + layangLayang.getKelilingLayangLayang());
-        } catch(Exception e){
-            System.out.println("Layang-layang tidak bisa dibuat dengan nilai diagonal dan sisi yang kurang dari 0 dan negatif!");
-        }
-        
-        // Persegi
-        try{
-            Persegi persegi = new Persegi(10);
-            System.out.println("\n-> Persegi\nsisi = 22");
-            System.out.println("Luas Persegi : " + persegi.getLuasPersegi()); 
-            System.out.println("Keliling Persegi: " + persegi.getKelilingPersegi());
-        } catch(Exception e){
-            System.out.println("Persegi tidak bisa dibuat dengan nilai sisi yang kurang dari 0 dan negatif!");
-        }
-        
-        // Persegi Panjang
-        try{
-            PersegiPanjang persegiPanjang = new PersegiPanjang(12,10);
-            System.out.println("\n-> Persegi Panjang \npanjang= 12 & lebar = 10");
-            System.out.println("Luas Persegi Panjang : " + persegiPanjang.getLuasPersegiPanjang()); 
-            System.out.println("Keliling Persegi Panjang: " + persegiPanjang.getKelilingPersegiPanjang());
-        } catch(Exception e){
-            System.out.println("Persegi Panjang tidak bisa dibuat dengan nilai panjang dan lebar yang kurang dari 0 dan negatif!");
-        }
-        
-        // Segitiga
-        try{
-            Segitiga segitiga = new Segitiga(12,10);
-            System.out.println("\n-> Segitiga \n alas= 12 & tinggi= 10");
-            System.out.println("Luas Segitiga : " + segitiga.getLuas()); 
-            System.out.println("Keliling Segitiga: " + segitiga.getKeliling());
-        } catch(Exception e){
-            System.out.println("Segitiga tidak bisa dibuat dengan nilai alas dan tinggi yang kurang dari 0 dan negatif!");
-        }
-        
-        // Trapesium
-        try{
-            Trapesium trapesium = new Trapesium(10,14,8,6);
-            System.out.println("\n-> Trapesium \n alas atas = 10 & alas bawah = 14 & sisi miring = 8 & tinggi = 6");
-            System.out.println("Luas Trapesium : " + trapesium.getLuas()); 
-            System.out.println("Keliling Trapesium : " + trapesium.getKeliling());
-        } catch(Exception e){
-            System.out.println("Trapesium tidak bisa dibuat dengan nilai alas atas, alas bawah, sisi miring dan  tinggi yang kurang dari 0 dan negatif!");
-        }
-        
-        // Lingkaran
-        try{
-            Lingkaran lingkaran = new Lingkaran(7);
-            System.out.println("\n-> Lingkaran \n jari-jari = 14");
-            System.out.println("Luas Lingkaran : " + lingkaran.getLuasLingkaran()); 
-            System.out.println("Keliling Lingkaran : " + lingkaran.getKelilingLingkaran());
-        } catch(Exception e){
-            System.out.println("Lingkaran tidak bisa dibuat dengan nilai jari- jari yang kurang dari 0 dan negatif!");
-        }
-        
-        // Juring Lingkaran
-        try{
-            Lingkaran lingkaran = new Lingkaran(7);
-            JuringLingkaran juring = new JuringLingkaran(lingkaran, 90);
-            System.out.println("\n-> JuringLingkaran\n jari-jari = 7 & sudut 90 derajat");
-            System.out.println("Luas JuringLingkaran: " + juring.getLuasJuring()); 
-            System.out.println("Keliling JuringLingkaran: " + juring.getKelilingJuring());
-        } catch(Exception e){
-            System.out.println("Juring Lingkaran tidak bisa dibuat dengan nilai jari- jari  yang kurang dari 0 dan negatif!");
-        }
-        
-        // Tembereng Lingkaran
-        try{
-            Lingkaran lingkaran = new Lingkaran(7);
-            TemberengLingkaran tembereng = new TemberengLingkaran(lingkaran, 90);
-            System.out.println("\n->Tembereng Lingkaran\n jari-jari = 7 & sudut 90 derajat");
-            System.out.println("Luas Tembereng Lingkaran: " + tembereng.getLuasTembereng()); 
-            System.out.println("Keliling Tembereng Lingkaran: " + tembereng.getKelilingTembereng());
-        } catch(Exception e){
-            System.out.println("Tembereng Lingkaran tidak bisa dibuat dengan nilai jari- jari  yang kurang dari 0 dan negatif!");
-        }
-        
-        // ======= Bangun Ruang =======
-        System.out.println("\n\n=== Bagun Ruang ===");
-        // Persegi Panjang --> Balok, Limas Persegi Panjang dan Prisma Persegi Panjang
-        try {
-            System.out.println("\n->Balok \n panjang = 5 & blebar = 3 & tinggi = 4");
-            PersegiPanjang persegiPanjang = new PersegiPanjang(5,3);
-            Balok balok = new Balok(persegiPanjang,4);
-            System.out.println("Volume Balok: " + balok.getVolume()); 
-            System.out.println("Luas Permukaan Balok: " + balok.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang balok dengan nilai yang diberikan.");
-        }
-        
-        try {
-            System.out.println("\n->Limas Persegi Panjang \n panjang = 6 & lebar = 4 & tinggi = 10");
-            LimasPersegiPanjang limasPersegiPanjang = new LimasPersegiPanjang(6,4,10);
-            System.out.println("Volume LimasPersegiPanjang: " + limasPersegiPanjang.getVolume()); 
-            System.out.println("Luas Permukaan LimasPersegiPanjang: " + limasPersegiPanjang.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang LimasPersegiPanjang dengan nilai yang diberikan.");
-        }
-        
-        try {
-            System.out.println("\n->Prisma Persegi Panjang \n panjang = 6 & lebar = 4 & tinggi = 10");
-            PrismaPersegiPanjang prismaPersegiPanjang = new PrismaPersegiPanjang(6,4,10);
-            System.out.println("Volume Prisma Persegi Panjang: " + prismaPersegiPanjang.getVolume()); 
-            System.out.println("Luas Permukaan Prisma Persegi Panjang: " + prismaPersegiPanjang.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Prisma Persegi Panjang dengan nilai yang diberikan.");
-        }
-        
-        // Persegi --> Kubus, Limas Persegi dan Prisma Persegi
-        try {
-            System.out.println("\n->Kubus \n sisi = 10");
-            Persegi persegi = new Persegi(10);
-            Kubus kubus = new Kubus(persegi);
-            System.out.println("Volume Kubus: " + kubus.getVolume()); 
-            System.out.println("Luas Permukaan Kubus: " + kubus.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang kubus dengan nilai yang diberikan.");
-        }
-        
-        try {
-            System.out.println("\n->Limas Persegi\n sisi = 10, tinggi = 3");
-            LimasPersegi limasPersegi = new LimasPersegi(10,3);
-            System.out.println("Volume LimasPersegi: " + limasPersegi.getVolume()); 
-            System.out.println("Luas Permukaan LimasPersegi: " + limasPersegi.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang limasPersegi dengan nilai yang diberikan.");
-        }
+        // Menggunakan try-with-resources agar Scanner otomatis ditutup
+        try (Scanner input = new Scanner(System.in)) {
+            int pilihan;
+            do {
+                System.out.println("\n=== Program Perhitungan Benda Geometri ===");
+                System.out.println("1. Hitung dinamis bangun datar");
+                System.out.println("2. Hitung dinamis bangun ruang");
+                System.out.println("3. Hitung keseluruhan bangun"); 
+                System.out.println("4. Exit");
+                System.out.print("Masukkan pilihan anda : ");
 
-        try {
-            System.out.println("\n->Prisma Persegi\n sisi = 10, tinggi = 3");
-            PrismaPersegi prismaPersegi = new PrismaPersegi(10,3);
-            System.out.println("Volume PrismaPersegi: " + prismaPersegi.getVolume()); 
-            System.out.println("Luas Permukaan LimasPersegi: " + prismaPersegi.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Prisma Persegi dengan nilai yang diberikan.");
-        }
-        
-        // Belah Ketupat --> Limas Belah Ketupat dan Prisma Belah Ketupat
-        try {
-            System.out.println("\n->Limas Belah Ketupat\n diagonal 1 = 6 & diagonal 2 = 10 & sisi = 12, tinggi = 8");
-            LimasBelahKetupat limasBelahKetupat = new LimasBelahKetupat(6,10,12,8);
-            System.out.println("Volume Limas Belah Ketupat: " + limasBelahKetupat.getVolume()); 
-            System.out.println("Luas Permukaan Limas Belah Ketupat: " + limasBelahKetupat.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Limas Belah Ketupatdengan nilai yang diberikan.");
-        }
-        
-        try {
-            System.out.println("\n->Prisma Belah Ketupat\n diagonal 1 = 5 & diagonal 2 = 10 & sisi = 4, tinggi = 3");
-            PrismaBelahKetupat prismaBelahKetupat = new PrismaBelahKetupat(5,10,4,3);
-            System.out.println("Volume Prisma Belah Ketupat: " + prismaBelahKetupat.getVolume()); 
-            System.out.println("Luas Permukaan Prisma Belah Ketupat: " + prismaBelahKetupat.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Prisma Belah Ketupatdengan nilai yang diberikan.");
-        }  
+                try {
+                    pilihan = input.nextInt();
 
-        // Layang-Layang --> Limas Layang-Layang dan Prisma Layang-Layang
-        try {
-            System.out.println("\n->Limas Layang-Layang\n diagonal 1 = 10 & diagonal 2 = 5 & sisi pendek = 6 & sisi panjang = 12 & tinggi = 8");
-            LimasLayangLayang limasLayangLayang = new LimasLayangLayang(10,5,6,12,8);
-            System.out.println("Volume Limas Layang-Layang: " + limasLayangLayang.getVolume()); 
-            System.out.println("Luas Permukaan Limas Layang-Layang: " + limasLayangLayang.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Limas Layang-Layang dengan nilai yang diberikan.");
-        }
-        
-        try {
-            System.out.println("\n->Prisma Layang-Layang\n diagonal 1 = 10 & diagonal 2 = 5 & sisi pendek = 6 & sisi panjang = 12 & tinggi = 8");
-            PrismaLayangLayang prismaLayangLayang = new PrismaLayangLayang(10,5,6,12,8);
-            System.out.println("Volume Prisma  Layang-Layang: " + prismaLayangLayang.getVolume()); 
-            System.out.println("Luas Permukaan Prisma  Layang-Layang: " + prismaLayangLayang.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Prisma  Layang-Layang dengan nilai yang diberikan.");
-        }
-        
-        // Jajar Genjang --> Limas Jajar Genjang dan Prisma Jajar Genjang
-        try {
-            System.out.println("\n->Limas Jajar Genjang\n alas jajar genjang = 10 & tinggi jajar genjang = 7 & sisi A = 5 & sisi B = 6 & tinggi prisma = 12");
-            JajarGenjang jajarGenjang = new JajarGenjang(10,7,5,6);
-            LimasJajarGenjang limasJajarGenjang = new LimasJajarGenjang(jajarGenjang,12);
-            System.out.println("Volume Limas Jajar Genjang: " + limasJajarGenjang.getVolume()); 
-            System.out.println("Luas Permukaan Limas Jajar Genjang: " + limasJajarGenjang.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Limas Jajar Genjang dengan nilai yang diberikan.");
-        }       
-        
-        try {
-            System.out.println("\n->Prisma Jajar Genjang\n alas jajar genjang = 10 & tinggi jajar genjang = 7 & sisi A = 5 & sisi B = 6 & tinggi prisma = 8");
-            PrismaJajarGenjang prismaJajarGenjang = new PrismaJajarGenjang(10,5,6,7,8);
-            System.out.println("Volume Prisma Jajar Genjang: " + prismaJajarGenjang.getVolume()); 
-            System.out.println("Luas Permukaan Prisma Jajar Genjang: " + prismaJajarGenjang.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Prisma Jajar Genjang dengan nilai yang diberikan.");
-        }        
-        
-        // Segitiga --> Limas Segitiga dan Prisma Segitiga
-        try {
-            System.out.println("\n->Limas Segitiga\n tinggi prisma = 10 & sisi segitga = 5 & tinggi segitiga = 6 ");
-            Segitiga alas = new Segitiga(5,6);
-            LimasSegitiga limasSegitiga = new LimasSegitiga(alas, 10);
-            System.out.println("Volume Limas Segitiga: " + limasSegitiga.getVolume()); 
-            System.out.println("Luas Permukaan Limas Segitiga: " + limasSegitiga.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Limas Segitiga dengan nilai yang diberikan.");
-        } 
+                    switch (pilihan) {
+                        case 1:
+                            System.out.println("\n=== Bangun Datar ===");
+                            System.out.println("1. Segitiga");
+                            System.out.println("2. Jajar Genjang");
+                            System.out.println("3. Belah Ketupat");
+                            System.out.println("4. Persegi Panjang");
+                            System.out.println("5. Layang-Layang");
+                            System.out.println("6. Persegi");
+                            System.out.println("7. Trapesium (Belum Implementasi)");
+                            System.out.println("8. Lingkaran (Belum Implementasi)");
+                            System.out.println("9. Juring Lingkaran (Belum Implementasi)");
+                            System.out.println("10. Tembereng Lingkaran (Belum Implementasi)");
+                            System.out.print("Masukkan pilihan bangun datar : ");
+                            int pilihanBangunDatar = input.nextInt();
 
-        try {
-            System.out.println("\n->Prisma Segitiga\n tinggi prisma = 10 & sisi segitga = 5 & tinggi segitiga = 6 ");
-            Segitiga alas = new Segitiga(5,6);
-            PrismaSegitiga prismaSegitiga = new PrismaSegitiga(alas, 10);
-            System.out.println("Volume Prisma Segitiga: " + prismaSegitiga.getVolume()); 
-            System.out.println("Luas Permukaan PrismaSegitiga: " + prismaSegitiga.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Prisma Segitiga dengan nilai yang diberikan.");
-        }
-        
-        // Trapesium --> Limas Trapesium dan Prisma Trapesium
-        try {
-            System.out.println("\n->Limas Trapesium\n alas atas = 10 & alas bawah = 14 & sisi miring = 8 & tinggi trapesium = 8 & tinggi limas = 8");
-            Trapesium alas = new Trapesium(10,14,8,6);
-            LimasTrapesium limasTrapesium = new LimasTrapesium(alas, 10);
-            System.out.println("Volume Limas Trapesium: " + limasTrapesium.getVolume()); 
-            System.out.println("Luas Permukaan Limas Trapesium: " + limasTrapesium.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Limas Trapesium dengan nilai yang diberikan.");
-        }
-        
-        try {
-            System.out.println("\n->Prisma Trapesium\n alas atas = 10 & alas bawah = 14 & sisi miring = 8 & tinggi trapesium = 8 & tinggi limas = 8");
-            Trapesium alas = new Trapesium(10,14,8,6);
-            PrismaTrapesium prismaTrapesium = new PrismaTrapesium(alas, 10);
-            System.out.println("Volume Prisma Trapesium: " + prismaTrapesium.getVolume()); 
-            System.out.println("Luas Permukaan Prisma Trapesium: " + prismaTrapesium.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Prisma Trapesium dengan nilai yang diberikan.");
-        }
-        
-        // Lingkaran --> Bola, Kerucut, Tabung
-        try {
-            System.out.println("\n->Bola \n jari-jari = 7");
-            Bola bola = new Bola(7);
-            System.out.println("Volume Bola: " + bola.getVolume()); 
-            System.out.println("Luas Permukaan Bola: " + bola.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Bola dengan nilai yang diberikan.");
-        }  
-        
-        try {
-            System.out.println("\n->Tabung \n jari-jari = 7 & tinggi = 5");
-            Tabung tabung = new Tabung(7,5);
-            System.out.println("Volume Tabung: " + tabung.getVolume()); 
-            System.out.println("Luas Permukaan Tabung: " + tabung.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Tabung dengan nilai yang diberikan.");
-        }        
-        
-        try {
-            System.out.println("\n->Kerucut \n jari-jari = 7 & tinggi = 5");
-            Kerucut kerucut = new Kerucut(7,5);
-            System.out.println("Volume Kerucut: " + kerucut.getVolume()); 
-            System.out.println("Luas Permukaan Kerucut: " + kerucut.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Kerucut dengan nilai yang diberikan.");
-        } 
-        
-        try {
-            System.out.println("\n->Kerucut Terpancung \n jari-jari atas = 3 & jari-jari bawah = 5 & tinggi terpancung = 4");
-            KerucutTerpancung kerucutTerpancung = new KerucutTerpancung(3,5,4);
-            System.out.println("Volume KerucutTerpancung: " + kerucutTerpancung.getVolume()); 
-            System.out.println("Luas Permukaan KerucutTerpancung: " + kerucutTerpancung.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang KerucutTerpancung dengan nilai yang diberikan.");
-        } 
-                
-        try {
-            System.out.println("\n->Juring Bola\n jari-jari = 7 & sudut  = 90 derajat");
-            Bola bola = new Bola(7);
-            JuringBola juringBola = new JuringBola(bola,90);
-            System.out.println("Volume Juring Bola: " + juringBola.getVolume()); 
-            System.out.println("Luas Permukaan Juring Bola: " + juringBola.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Juring Bola dengan nilai yang diberikan.");
-        }
-        
-        try {
-            System.out.println("\n->Cincin Bola\n jari-jari = 7 & tinggi cincin = 3");
-            Bola bola = new Bola(7);
-            CincinBola cincinBola = new CincinBola(bola,3);
-            System.out.println("Volume Cincin Bola: " + cincinBola.getVolume()); 
-            System.out.println("Luas Permukaan Cincin Bola: " + cincinBola.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Cincin Bola dengan nilai yang diberikan.");
-        }   
-    
-        try {
-            System.out.println("\n->Tembereng Bola\n jari-jari = 7 & tinggi tembereng = 5");
-            Bola bola = new Bola(7);
-            TemberengBola temberengBola = new TemberengBola(bola,5);
-            System.out.println("Volume Tembereng Bola: " + temberengBola.getVolume()); 
-            System.out.println("Luas Permukaan Tembereng Bola: " + temberengBola.getLuasPermukaan());
-        } catch (Exception e) {
-            System.out.println("Maaf, tidak bisa membuat bangun ruang Tembereng Bola dengan nilai yang diberikan.");
-        }  
-               
-               
-        
+                            switch (pilihanBangunDatar) {
+                                case 1:
+                                    System.out.println("\n--- Menghitung Segitiga ---");
+
+                                    System.out.print("Masukkan nilai alas segitiga : ");
+                                    double alas = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi segitiga : ");
+                                    double tinggi = input.nextDouble();
+
+                                    Segitiga segitiga = new Segitiga(alas,tinggi);
+                                    System.out.println("Luas Segitiga = " + segitiga.hitungLuas());
+                                    System.out.println("Keliling Segitiga = " + segitiga.hitungKeliling());
+                                    break;
+                                case 2:
+                                    System.out.println("\n--- Menghitung JajarGenjang ---");
+
+                                    System.out.print("Masukkan nilai alas JajarGenjang : ");
+                                    double alasJajarGenjang = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi JajarGenjang : ");
+                                    double tinggiJajarGenjang = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai sisi A JajarGenjang : ");
+                                    double sisiAJajarGenjang = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai sisi B JajarGenjang : ");
+                                    double sisiBJajarGenjang = input.nextDouble();
+
+                                    JajarGenjang jajarGenjang = new JajarGenjang(alasJajarGenjang,tinggiJajarGenjang,sisiAJajarGenjang,sisiBJajarGenjang);
+                                    System.out.println("Luas JajarGenjang = " + jajarGenjang.hitungLuas());
+                                    System.out.println("Keliling JajarGenjang = " + jajarGenjang.hitungKeliling());
+                                case 3:
+                                    System.out.println("\n--- Menghitung BelahKetupat ---");
+
+                                    System.out.print("Masukkan nilai alas BelahKetupat : ");
+                                    double diagonal1BelahKetupat = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi BelahKetupat : ");
+                                    double diagonal2BelahKetupat = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai sisi BelahKetupat : ");
+                                    double sisiBelahKetupat = input.nextDouble();
+
+                                    BelahKetupat belahKetupat = new BelahKetupat(diagonal1BelahKetupat,diagonal2BelahKetupat,sisiBelahKetupat);
+                                    System.out.println("Luas BelahKetupat = " + belahKetupat.hitungLuas());
+                                    System.out.println("Keliling BelahKetupat = " + belahKetupat.hitungKeliling());
+                                case 4:
+                                    System.out.println("\n--- Menghitung PersegiPanjang ---");
+
+                                    System.out.print("Masukkan nilai panjang PersegiPanjang : ");
+                                    double panjangPersegiPanjang = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai lebar PersegiPanjang : ");
+                                    double lebarPersegiPanjang = input.nextDouble();
+
+                                    PersegiPanjang persegiPanjang = new PersegiPanjang(panjangPersegiPanjang,lebarPersegiPanjang);
+                                    System.out.println("Luas PersegiPanjang = " + persegiPanjang.hitungLuas());
+                                    System.out.println("Keliling PersegiPanjang = " + persegiPanjang.hitungKeliling());
+                                case 5:
+                                    System.out.println("\n--- Menghitung LayangLayang ---");
+
+                                    System.out.print("Masukkan nilai alas LayangLayang : ");
+                                    double diagonal1LayangLayang = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai tinggi LayangLayang : ");
+                                    double diagonal2LayangLayang = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai sisi A LayangLayang : ");
+                                    double sisiALayangLayang = input.nextDouble();
+
+                                    System.out.print("Masukkan nilai sisi B LayangLayang : ");
+                                    double sisiBLayangLayang = input.nextDouble();
+
+                                    LayangLayang layangLayang = new LayangLayang(diagonal1LayangLayang,diagonal2LayangLayang,sisiALayangLayang, sisiBLayangLayang);
+                                    System.out.println("Luas LayangLayang = " + layangLayang.hitungLuas());
+                                    System.out.println("Keliling LayangLayang = " + layangLayang.hitungKeliling());
+                                case 6:
+                                    System.out.println("\n--- Menghitung Persegi ---");
+                                    System.out.print("Masukkan nilai sisi persegi : ");
+                                    double sisi = input.nextDouble();
+                                    Persegi persegi = new Persegi(sisi);
+                                    System.out.println("Luas Persegi = " + persegi.hitungLuas());
+                                    System.out.println("Keliling Persegi = " + persegi.hitungKeliling());
+                                    break;
+                                case 7:
+                                    System.out.println("\n--- Menghitung Trapesium ---");
+                                    System.out.print("Masukkan nilai alas atas trapesium : ");
+                                    double alasAtasTrapesium = input.nextDouble();
+                                    System.out.print("Masukkan nilai alas bawah trapesium : ");
+                                    double alasBawahTrapesium = input.nextDouble();
+                                    System.out.print("Masukkan nilai sisi miring  trapesium : ");
+                                    double sisiMiringTrapesium = input.nextDouble();
+                                    System.out.print("Masukkan nilai tinggi trapesium : ");
+                                    double tinggiTrapesium = input.nextDouble();
+                                    Trapesium trapesium = new Trapesium(alasAtasTrapesium, alasBawahTrapesium, sisiMiringTrapesium, tinggiTrapesium);
+                                    System.out.println("Luas Trapesium = " + trapesium.hitungLuas());
+                                    System.out.println("Keliling Trapesium = " + trapesium.hitungKeliling());
+                                    break;
+                                case 8:
+                                    System.out.println("\n--- Menghitung Lingkaran ---");
+                                    System.out.print("Masukkan nilai jari-jari Lingkaran : ");
+                                    double jariJariLingkaran = input.nextDouble();
+                                    
+                                    Lingkaran lingkaran = new Lingkaran(jariJariLingkaran);
+                                    System.out.println("Luas Lingkaran = " + lingkaran.hitungLuas());
+                                    System.out.println("Keliling Lingkaran = " + lingkaran.hitungKeliling());
+                                    break;
+                                case 9:
+                                    System.out.println("\n--- Menghitung Juring Lingkaran ---");
+                                    System.out.print("Masukkan nilai jari-jari Lingkaran : ");
+                                    double jariJariLingkaran_juring = input.nextDouble();
+                                    
+                                    System.out.print("Masukkan nilai sudut Juring Lingkaran : ");
+                                    double sudutJuring = input.nextDouble();
+                                    
+                                    JuringLingkaran juringLingkaran = new JuringLingkaran(jariJariLingkaran_juring, sudutJuring);
+                                    System.out.println("Luas Juring Lingkaran = " + juringLingkaran.hitungLuas());
+                                    System.out.println("Keliling Juring Lingkaran = " + juringLingkaran.hitungKeliling());
+                                    break;
+                                case 10:
+                                    System.out.println("\n--- Menghitung Tembereng Lingkaran ---");
+                                    System.out.print("Masukkan nilai jari-jari Lingkaran : ");
+                                    double jariJariLingkaran_tembereng = input.nextDouble();
+                                    
+                                    System.out.print("Masukkan nilai sudut Tembereng Lingkaran : ");
+                                    double sudutTembereng = input.nextDouble();
+                                    
+                                    TemberengLingkaran temberengLingkaran = new TemberengLingkaran(jariJariLingkaran_tembereng, sudutTembereng);
+                                    System.out.println("Luas Tembereng Lingkaran = " + temberengLingkaran.hitungLuas());
+                                    System.out.println("Keliling Tembereng Lingkaran = " + temberengLingkaran.hitungKeliling());
+                                    break;
+                                default:
+                                    System.out.println("Pilihan bangun datar tidak valid.");
+                            }
+                            break; 
+                        case 2:
+                            System.out.println("=== Bangun Ruang ===");
+                            System.out.println("Fitur bangun ruang belum diimplementasikan.");
+                            // Implementasi bangun ruang
+                            break;
+                        case 3:
+                            System.out.println("=== Hitung Keseluruhan ===");
+                            System.out.println("Fitur hitung keseluruhan belum diimplementasikan.");
+                            // Implementasi keseluruhan
+                            break;
+                        case 4:
+                            System.out.println("Keluar dari program. Terima kasih!");
+                            break;
+                        default:
+                            System.out.println("Pilihan tidak valid. Silakan coba lagi.");
+                    }
+                } catch (InputMismatchException e) {
+                    System.out.println("Input tidak valid. Harap masukkan angka sesuai pilihan.");
+                    input.nextLine(); // Membersihkan buffer scanner dari input yang salah
+                    pilihan = 0; // Reset pilihan agar loop berlanjut
+                }
+            } while (pilihan != 4);
+
+        } // Scanner akan otomatis ditutup di sini
+        System.out.println("Program telah berakhir.");
     }
-    
 }

@@ -1,44 +1,22 @@
 package projekpbo.BangunDatar;
 
-public class JuringLingkaran extends BangunDatar {
-    private Lingkaran lingkaran;
-    private double sudut; 
-    private double luas; 
-    private double keliling; 
+public class JuringLingkaran extends Lingkaran {
+    private double sudutJuring; 
 
-    public JuringLingkaran(Lingkaran lingkaran, double sudut) {
-        this.lingkaran = lingkaran;
-        this.sudut = sudut;
-        this.keliling = hitungKeliling();
-        this.luas = hitungLuas();
+    public JuringLingkaran(double jariJari,double sudutJuring) {
+        super(jariJari);
+        this.sudutJuring = sudutJuring;;
     }
 
     @Override
     public double hitungLuas() {
-        luas = (sudut / 360.0) * lingkaran.hitungLuas();
+        this.luas = (sudutJuring / 360.0) * super.hitungLuas();
         return luas;
     }
 
     @Override
     public double hitungKeliling() {
-        double panjangBusur = (sudut / 360.0) * lingkaran.hitungKeliling();
-        keliling = panjangBusur + 2 * lingkaran.getJariJari();
+        this.keliling = (sudutJuring / 360.0) * super.hitungKeliling() + 2 * super.jariJari;;
         return keliling;
-    }
-
-    // public Lingkaran getLingkaran() {
-    //     return lingkaran;
-    // }
-
-    public double getKelilingJuring(){
-        return keliling;
-    }
-
-    public double getLuasJuring(){
-        return luas;
-    }
-
-    public double getSudut() {
-        return sudut;
     }
 }
